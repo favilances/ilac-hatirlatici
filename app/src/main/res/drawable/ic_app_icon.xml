@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M0,0h108v108h-108z"/>
+    
+    <!-- Circular background -->
+    <path
+        android:fillColor="#F5F5F5"
+        android:pathData="M54,54m-50,0a50,50 0,1 1,100 0a50,50 0,1 1,-100 0"/>
+    
+    <!-- Pill shadow -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M54,20C38.5,20 26,32.5 26,48v12c0,15.5 12.5,28 28,28s28,-12.5 28,-28V48C82,32.5 69.5,20 54,20z"/>
+    
+    <!-- Pink/Magenta half of pill -->
+    <path
+        android:fillColor="#E91E63"
+        android:pathData="M54,18C38.5,18 26,30.5 26,46v12c0,15.5 12.5,28 28,28h0c0,-15.5 0,-28 0,-28V46C54,30.5 54,18 54,18z"/>
+    
+    <!-- Blue/Teal half of pill -->
+    <path
+        android:fillColor="#00BCD4"
+        android:pathData="M54,18h0c15.5,0 28,12.5 28,28v12c0,15.5 -12.5,28 -28,28C54,71.5 54,58 54,58V46C54,30.5 54,18 54,18z"/>
+    
+    <!-- Highlight on pill -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.4"
+        android:pathData="M40,30c0,-3.3 2.7,-6 6,-6h16c3.3,0 6,2.7 6,6v8c0,3.3 -2.7,6 -6,6h-16c-3.3,0 -6,-2.7 -6,-6V30z"/>
+    
+    <!-- Small highlight dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.6"
+        android:pathData="M48,32c0,-2.2 1.8,-4 4,-4s4,1.8 4,4s-1.8,4 -4,4S48,34.2 48,32z"/>
+        
+</vector> 

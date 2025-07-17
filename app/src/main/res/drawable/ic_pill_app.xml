@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    
+    <!-- Pink/Magenta half of pill -->
+    <path
+        android:fillColor="#E91E63"
+        android:pathData="M12,2C8.13,2 5,5.13 5,9v6c0,3.87 3.13,7 7,7h0c0,-3.87 0,-7 0,-7V9C12,5.13 12,2 12,2z"/>
+    
+    <!-- Blue/Teal half of pill -->
+    <path
+        android:fillColor="#00BCD4"
+        android:pathData="M12,2h0c3.87,0 7,3.13 7,7v6c0,3.87 -3.13,7 -7,7C12,19 12,16.13 12,15V9C12,5.13 12,2 12,2z"/>
+    
+    <!-- Highlight on pill -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.3"
+        android:pathData="M8,6c0,-1.1 0.9,-2 2,-2h4c1.1,0 2,0.9 2,2v2c0,1.1 -0.9,2 -2,2h-4c-1.1,0 -2,-0.9 -2,-2V6z"/>
+        
+</vector> 
