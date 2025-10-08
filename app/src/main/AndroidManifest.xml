@@ -22,10 +22,7 @@
         android:theme="@style/Theme.Ilachatirlatici"
         tools:targetApi="31">
         
-        <!-- AdMob App ID -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_app_id" />
+        <!-- AdMob integration removed -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

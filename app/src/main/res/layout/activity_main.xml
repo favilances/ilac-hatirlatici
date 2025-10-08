@@ -269,31 +269,6 @@
 
     </LinearLayout>
 
-    <!-- Google AdMob Banner -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="50dp"
-        android:background="@color/border_light">
-        
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:adSize="BANNER"
-            app:adUnitId="@string/admob_banner_unit_id" />
-        
-        <TextView
-            android:id="@+id/tvAdPlaceholder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reklam Yükleniyor..."
-            android:textSize="12sp"
-            android:textColor="@color/text_secondary"
-            android:layout_gravity="center"
-            android:padding="16dp" />
-            
-    </FrameLayout>
+    <!-- Ads removed: previously a Google AdMob banner here -->
 
 </LinearLayout> 

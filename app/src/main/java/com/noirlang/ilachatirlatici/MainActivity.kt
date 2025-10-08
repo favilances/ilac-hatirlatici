@@ -9,10 +9,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
+// AdMob integrations removed
 import android.util.Log
 import com.noirlang.ilachatirlatici.databinding.ActivityMainBinding
 import com.noirlang.ilachatirlatici.data.AppDatabase
@@ -45,12 +42,7 @@ class MainActivity : AppCompatActivity() {
         // Initialize repository
         repository = ReminderRepository(AppDatabase.getDatabase(this).medicationDao())
 
-        // Initialize Google Mobile Ads SDK
-        MobileAds.initialize(this) { initializationStatus ->
-            Log.d("AdMob", "MobileAds initialized for production: $initializationStatus")
-            // Setup AdMob banner after initialization
-            setupAdView()
-        }
+        // Google Mobile Ads SDK removed. No ads will be shown.
 
         // Setup date picker
         setupDatePicker()
@@ -95,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         // Update the header text in the reminders card
         binding.root.findViewById<TextView>(R.id.tvRemindersHeader)?.text = headerText
     }
-    
+
     private fun setupRemindersList() {
         reminderAdapter = ReminderAdapter(
             onTakenClick = { medication ->
@@ -116,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         )
-        
+
         binding.rvReminders.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = reminderAdapter
@@ -126,7 +118,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadRemindersForDate(date: LocalDate) {
         repository.remindersForDate(date).observe(this, Observer { medications ->
             reminderAdapter.submitList(medications)
-            
+
             // Show/hide empty state
             if (medications.isEmpty()) {
                 binding.layoutEmptyState.visibility = View.VISIBLE
@@ -136,41 +128,6 @@ class MainActivity : AppCompatActivity() {
                 binding.rvReminders.visibility = View.VISIBLE
             }
         })
-    }
-    
-    private fun setupAdView() {
-        if (!isNetworkAvailable()) {
-            Log.w("AdMob", "No internet connection, skipping ad load")
-            binding.tvAdPlaceholder.text = "İnternet bağlantısı gerekli"
-            binding.tvAdPlaceholder.visibility = View.VISIBLE
-            return
-        }
-        
-        val adRequest = AdRequest.Builder().build()
-        
-        binding.adView.adListener = object : AdListener() {
-            override fun onAdLoaded() {
-                Log.d("AdMob", "Production banner ad loaded successfully")
-                binding.tvAdPlaceholder.visibility = View.GONE
-            }
-            
-            override fun onAdFailedToLoad(error: LoadAdError) {
-                Log.e("AdMob", "Production banner ad failed to load: ${error.message} (Code: ${error.code})")
-                binding.tvAdPlaceholder.text = "Reklam yüklenemedi"
-                binding.tvAdPlaceholder.visibility = View.VISIBLE
-            }
-            
-            override fun onAdOpened() {
-                Log.d("AdMob", "Production banner ad opened")
-            }
-            
-            override fun onAdClosed() {
-                Log.d("AdMob", "Production banner ad closed")
-            }
-        }
-        
-        binding.adView.loadAd(adRequest)
-        Log.d("AdMob", "Production banner ad load requested - may take longer than test ads")
     }
     
     private fun isNetworkAvailable(): Boolean {

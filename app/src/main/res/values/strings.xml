@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">İlaç Hatırlatıcısı</string>
     
-    <!-- AdMob -->
-    <string name="admob_app_id">ca-app-pub-7696062209589998~8118721394</string>
-    <string name="admob_banner_unit_id">ca-app-pub-7696062209589998/2397866570</string>
-    <string name="admob_test_banner_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <!-- AdMob entries removed -->
 </resources>
